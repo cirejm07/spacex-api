@@ -1,0 +1,9 @@
+.loading-container{
+    width: 100%;
+    text-align: center;
+}
+
+.loading-container img{
+    width: 200px;
+    height: 200px;
+}
