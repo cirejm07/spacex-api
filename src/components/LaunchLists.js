@@ -31,7 +31,7 @@ export default function LaunchLists({data, error, searchTerm, setSearchTerm}) {
                         </div>
                         <div className='details-right'>
                             <div>
-                                <span>{flight.flight_number}</span>
+                                <span>{flight.flight_number}: </span>
                                 <span>{flight.name}</span>
                                 <span>( {new Date(flight.date_utc).getFullYear()} )</span>
                             </div>
