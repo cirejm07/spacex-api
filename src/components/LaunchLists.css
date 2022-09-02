@@ -72,7 +72,7 @@
 .search-textbox:focus ~ .search-label,
 .search-textbox:not(:placeholder-shown).search-textbox:not(:focus) ~ .search-label{
     font-size: clamp(12px,calc(2px + 1vw),calc(2px + 1vw));
-    transform: translateY(-20px);
+    transform: translateY(-30px);
 }
 
 
