@@ -4,7 +4,7 @@ export function useFetch(url) {
 
     const [getData, setData] = useState([])
     const [error, setError]= useState(null)
-    const [searchTerm, setSearchTerm] = useState('')
+  
 
     useEffect(() => {
         
@@ -41,5 +41,5 @@ export function useFetch(url) {
           
       },[url])
 
-      return {getData, error, searchTerm, setSearchTerm}
+      return {getData, error}
 }
