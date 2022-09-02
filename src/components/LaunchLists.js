@@ -9,9 +9,10 @@ export default function LaunchLists({data, error, searchTerm, setSearchTerm}) {
   return (
     <div className="launch-lists">
         <div className="container">
-            <div className="sub-container">
-                <h1>Launch Lists</h1>
+        <h1>Launch Lists</h1>
                 <input onChange={(e) => setSearchTerm(e.target.value)} type="text" placeholder="Search Flights by name" />
+            <div className="sub-container">
+                
                 <p>{searchTerm}</p>
                 {error && <div>{error}</div>}
                     {data && data.filter(val => {

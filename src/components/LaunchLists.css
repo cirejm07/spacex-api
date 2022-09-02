@@ -7,7 +7,7 @@
 }
 
 .launch-lists .container {
-    background-color: rgba(140, 62, 62, 0.308);
+    background-color: darkgrey;
     padding: 50px;
 }
 
@@ -18,17 +18,26 @@
 }
 
 .launch-lists input[type="text"]{
-    width: 100%;
+    width: 80%;
     margin: 0.5rem 0;
     padding: 5px;
+    border: none;
+    outline: none;
+    background-color: darkgrey;
+    position: relative;
+    border-bottom: 1px solid black;
 }
 
+
 .launch-lists .sub-container {
-    border: 1px solid rgba(0,0,0,0.2);
+    border: 1px solid rgba(0,0,0,0.5);
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
-    padding: 20px;
+    padding: 2rem;
     width: 80%;
     margin: 2rem auto;
+    background-color:white;
+    cursor: pointer;
 }
 
 .launch-lists .details {
@@ -36,6 +45,34 @@
     justify-content: flex-start;
     align-items: center;
     padding: 15px;
+    transition: all ease 1s;
+    position: relative;
+}
+
+.launch-lists .details::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.3);
+    bottom: 0;
+    left: 0;
+}
+
+.launch-lists .details:hover:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 1px;
+    background-color: black;
+    bottom: 0;
+    left: 0;
+    transition: width 0.2s ease-in;
+}
+
+.launch-lists .details:hover {
+    transform: scale(1.1) translateY(-10px);
+    
 }
 
 .launch-lists .details-right {
