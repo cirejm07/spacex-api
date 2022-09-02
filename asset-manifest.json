@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/spacex-api/static/css/main.171c14b1.css",
-    "main.js": "/spacex-api/static/js/main.02191a9e.js",
+    "main.css": "/spacex-api/static/css/main.128f27a6.css",
+    "main.js": "/spacex-api/static/js/main.587522cd.js",
     "static/media/loading.gif": "/spacex-api/static/media/loading.0f4c69845405ac3d1300.gif",
     "index.html": "/spacex-api/index.html",
-    "main.171c14b1.css.map": "/spacex-api/static/css/main.171c14b1.css.map",
-    "main.02191a9e.js.map": "/spacex-api/static/js/main.02191a9e.js.map"
+    "main.128f27a6.css.map": "/spacex-api/static/css/main.128f27a6.css.map",
+    "main.587522cd.js.map": "/spacex-api/static/js/main.587522cd.js.map"
   },
   "entrypoints": [
-    "static/css/main.171c14b1.css",
-    "static/js/main.02191a9e.js"
+    "static/css/main.128f27a6.css",
+    "static/js/main.587522cd.js"
   ]
 }
