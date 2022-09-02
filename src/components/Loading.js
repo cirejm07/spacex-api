@@ -3,7 +3,7 @@ import './Loading.css'
 export default function Loading() {
   return (
     <div className='loading-container'>
-        <img src={Logo} />
+        <img src={Logo} alt="Loading" />
     </div>
   )
 }
