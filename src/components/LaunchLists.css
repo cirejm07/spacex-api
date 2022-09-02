@@ -20,9 +20,13 @@
 .launch-lists input[type="text"]{
     width: 100%;
     margin: 0.5rem 0;
+    padding: 5px;
 }
 
 .launch-lists .sub-container {
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 5px;
+    padding: 20px;
     width: 80%;
     margin: 2rem auto;
 }
