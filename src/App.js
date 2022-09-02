@@ -3,16 +3,17 @@ import LaunchLists from './components/LaunchLists';
 import useLazyLoad from './hooks/useLazyLoad';
 import { useState, useEffect,useRef } from "react"
 import Loading from './components/Loading';
+import { useFetch } from './hooks/useFetch';
 
 
 function App() {
 
-
-
-  const [getData, setData] = useState([])
-  const [error, setError]= useState(null)
-  const [searchTerm, setSearchTerm] = useState('')
-  const [isLoading, setIsLoading] =  useState(false)
+const [url, setUrl] = useState('https://api.spacexdata.com/v4/launches/')
+const {getData, error} = useFetch(url)
+const [searchTerm, setSearchTerm] = useState('')
+  // const [getData, setData] = useState([])
+  // const [error, setError]= useState(null)
+  // const [searchTerm, setSearchTerm] = useState('')
 
   const NUM_PER_PAGE = 4;
   const TOTAL_PAGES = 1000;
@@ -32,40 +33,42 @@ function App() {
 
 const { data, loading } = useLazyLoad({triggerRef, onGrabData})
 
-    useEffect(() => {
+    // useEffect(() => {
         
-      const controller = new AbortController()
+    //   const controller = new AbortController()
 
-        const fetchData = async () => {
+    //     const fetchData = async () => {
 
-            try{
+    //         try{
 
-                const response = await fetch('https://api.spacexdata.com/v4/launches/', {signal: controller.singal})
-                if(!response.ok){
-                    throw new Error(response.statusText)
-                  }
-                // console.log(response);
-                const json = await response.json()
-                setData(json)
-                setError(null)
-                setIsLoading(false)
-            }
-            catch(err){
-              if(err.name === "AbortError"){
-                console.log('The fetch was aborted')
-            } else {
-              console.log(err)
-              setError('Could not fetch data')
-              setIsLoading(false)
-            }
-            }
+    //             const response = await fetch('https://api.spacexdata.com/v4/launches/', {signal: controller.singal})
+    //             if(!response.ok){
+    //                 throw new Error(response.statusText)
+    //               }
+    //             // console.log(response);
+    //             const json = await response.json()
+    //             setData(json)
+    //             setError(null)
+    //             setIsLoading(false)
+    //         }
+    //         catch(err){
+    //           if(err.name === "AbortError"){
+    //             console.log('The fetch was aborted')
+    //         } else {
+    //           console.log(err)
+    //           setError('Could not fetch data')
+    //           setIsLoading(false)
+    //         }
+    //         }
 
-        }
-        fetchData()
+    //     }
+    //     fetchData()
 
+    //     return () => {
+    //       controller.abort()
+    //     }
         
-        
-    },[])
+    // },[])
 
   // console.log(getData);
     
@@ -75,7 +78,7 @@ const { data, loading } = useLazyLoad({triggerRef, onGrabData})
   return (
     <div>
     <div className="App">
-     <LaunchLists isLoading={isLoading} data={data} error={error} searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+     <LaunchLists data={data} error={error} searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
     </div>
     <div ref={triggerRef} className={clsx('trigger', {visible: loading})}>
       { data.length > 0 && searchTerm.length === 0  ? <Loading /> : null }
